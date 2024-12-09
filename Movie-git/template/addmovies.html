@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--------------------------------------------------------------->
+<form method="POST" enctype="multipart/form-data" class="Moviefrm">
+        {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" name='t' class="form-control" >
+  </div>
+
+  <div class="mb-3">
+    <label  class="form-label">Desciption</label>
+      <textarea name='d' class="form-control" >Write your description here</textarea>
+  </div>
+
+   <div class="mb-3">
+    <label  class="form-label">Language</label>
+    <input type="text" name='l' class="form-control" >
+  </div>
+
+<div class="mb-3">
+    <label class="form-label">Year</label>
+    <input type="text" name='y' class="form-control" >
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" name='i' class="form-control" >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!-------------------------------------------------------------------------->
+
+{% endblock %}

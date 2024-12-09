@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--------------------------------------------------------------->
+<form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" value={{movie.title}} name='t' class="form-control" >
+  </div>
+
+  <div class="mb-3">
+    <label  class="form-label">Desciption</label>
+      <textarea name='d'  class="form-control" >{{movie.description}}</textarea>
+  </div>
+
+   <div class="mb-3">
+    <label  class="form-label">Language</label>
+    <input type="text" name='l' value={{movie.language}} class="form-control" >
+  </div>
+
+<div class="mb-3">
+    <label class="form-label">Year</label>
+    <input type="text" name='y' value={{movie.year}} class="form-control" >
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Image</label>
+            <img src="{{movie.image.url}}">
+    <input type="file" name='i' class="form-control" >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!-------------------------------------------------------------------------->
+
+{% endblock %}
